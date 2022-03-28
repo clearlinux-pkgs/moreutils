@@ -1,6 +1,8 @@
---- moreutils-0.62/Makefile~	2017-12-31 16:02:11.000000000 +0000
-+++ moreutils-0.62/Makefile	2018-06-13 20:13:26.969060569 +0000
-@@ -13,7 +13,7 @@
+diff --git a/Makefile b/Makefile
+index cb9c10b..26249ab 100644
+--- a/Makefile
++++ b/Makefile
+@@ -13,7 +13,7 @@ endif
  
  DOCBOOK2XMAN=xsltproc --param man.authors.section.enabled 0 $(DOCBOOKXSL)/manpages/docbook.xsl
  
@@ -9,12 +11,12 @@
  
  clean:
  	rm -f $(BINS) $(MANS) dump.c errnos.h errno.o \
-@@ -28,8 +28,6 @@
+@@ -28,8 +28,6 @@ install:
  	$(INSTALL_BIN) $(BINS) $(DESTDIR)$(PREFIX)/bin
  	install $(PERLSCRIPTS) $(DESTDIR)$(PREFIX)/bin
  
 -	mkdir -p $(DESTDIR)$(PREFIX)/share/man/man1
--	install $(MANS) $(DESTDIR)$(PREFIX)/share/man/man1
+-	install -m 644 $(MANS) $(DESTDIR)$(PREFIX)/share/man/man1
  
- check: isutf8
- 	./is_utf8/test.sh
+ uninstall:
+ 	for i in $(BINS) $(PERLSCRIPTS); do rm -f $(DESTDIR)$(PREFIX)/bin/$$i; done
