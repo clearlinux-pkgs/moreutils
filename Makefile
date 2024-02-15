@@ -1,5 +1,5 @@
 PKG_NAME := moreutils
-URL = https://mirrors.kernel.org/debian/pool/main/m/moreutils/moreutils_0.67.orig.tar.gz
+URL = https://mirrors.kernel.org/debian/pool/main/m/moreutils/moreutils_0.68.orig.tar.xz
 ARCHIVES = 
 
 include ../common/Makefile.common
