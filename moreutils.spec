@@ -6,10 +6,10 @@
 # autospec commit: da8b975
 #
 Name     : moreutils
-Version  : 0.68
-Release  : 9
-URL      : https://mirrors.kernel.org/debian/pool/main/m/moreutils/moreutils_0.68.orig.tar.xz
-Source0  : https://mirrors.kernel.org/debian/pool/main/m/moreutils/moreutils_0.68.orig.tar.xz
+Version  : 0.69
+Release  : 10
+URL      : https://mirrors.kernel.org/debian/pool/main/m/moreutils/moreutils_0.69.orig.tar.xz
+Source0  : https://mirrors.kernel.org/debian/pool/main/m/moreutils/moreutils_0.69.orig.tar.xz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-2-Clause GPL-2.0 MIT
@@ -43,11 +43,11 @@ license components for the moreutils package.
 
 
 %prep
-%setup -q -n moreutils-0.68
-cd %{_builddir}/moreutils-0.68
+%setup -q -n moreutils-0.69
+cd %{_builddir}/moreutils-0.69
 %patch -P 1 -p1
 pushd ..
-cp -a moreutils-0.68 buildavx2
+cp -a moreutils-0.69 buildavx2
 popd
 
 %build
@@ -55,7 +55,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1708039534
+export SOURCE_DATE_EPOCH=1708965954
 export GCC_IGNORE_WERROR=1
 CLEAR_INTERMEDIATE_CFLAGS="$CLEAR_INTERMEDIATE_CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 CLEAR_INTERMEDIATE_FCFLAGS="$CLEAR_INTERMEDIATE_FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
@@ -92,7 +92,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1708039534
+export SOURCE_DATE_EPOCH=1708965954
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/moreutils
 cp %{_builddir}/moreutils-%{version}/COPYING %{buildroot}/usr/share/package-licenses/moreutils/4d1d37f306ed270cda5b2741fac3abf0a7b012e5 || :
